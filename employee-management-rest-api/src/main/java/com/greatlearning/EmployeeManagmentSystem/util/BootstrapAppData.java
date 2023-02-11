@@ -29,9 +29,11 @@ public class BootstrapAppData {
 		System.out.println("Inserting the test data :: ");
 		User superuser = new User("superuser", this.passwordEncoder.encode("welcome"));
 
-		Role userRole = new Role("ADMIN");
+		Role userRole1 = new Role("ADMIN");
+		Role userRole2 = new Role("USER");
 
-		superuser.addRole(userRole);
+		superuser.addRole(userRole1);
+		superuser.addRole(userRole2);
 
 		this.userRepository.save(superuser);
 
